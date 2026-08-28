@@ -86,3 +86,80 @@ footer .blink {
   .hero h1 { font-size: 30px; }
   .content { padding-top: 48px; }
 }
+/* ---- palette picker: compact dots in the footer, same as the docs rail
+   on rootle.dev / gripsack.dev ---- */
+.palettes { display: inline-flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.palettes button {
+  width: 15px; height: 15px; border-radius: 50%; padding: 0;
+  background: var(--sw); border: 2px solid transparent; cursor: pointer;
+}
+.palettes button:hover { transform: scale(1.15); }
+.palettes button.active { border-color: var(--text); }
+
+/* ---- embedded palettes: identical values to rootle.dev / gripsack.dev
+   (eleven palettes). site.js sets data-palette on <html>; no attribute =
+   catppuccin-mocha (:root). ---- */
+html[data-palette="dracula"] {
+  --bg: #191a21; --deep: #21222c; --card: #282a36; --border: #44475a;
+  --text: #f8f8f2; --dim: #9aa2c7; --faint: #6272a4;
+  --red: #ff5555; --mauve: #ff79c6; --teal: #8be9fd; --border-strong: #6272a4;
+  --blue: #bd93f9; --green: #50fa7b; --yellow: #f1fa8c; --peach: #ffb86c;
+}
+html[data-palette="gruvbox-dark"] {
+  --bg: #141618; --deep: #1d2021; --card: #282828; --border: #3c3836;
+  --text: #ebdbb2; --dim: #bdae93; --faint: #928374;
+  --red: #fb4934; --mauve: #d3869b; --teal: #8ec07c; --border-strong: #504945;
+  --blue: #83a598; --green: #b8bb26; --yellow: #fabd2f; --peach: #fe8019;
+}
+html[data-palette="nord"] {
+  --bg: #242933; --deep: #272c36; --card: #2e3440; --border: #434c5e;
+  --text: #d8dee9; --dim: #9aa4b8; --faint: #616e88;
+  --red: #bf616a; --mauve: #b48ead; --teal: #8fbcbb; --border-strong: #4c566a;
+  --blue: #88c0d0; --green: #a3be8c; --yellow: #ebcb8b; --peach: #d08770;
+}
+html[data-palette="one-dark"] {
+  --bg: #1b1f27; --deep: #21252b; --card: #282c34; --border: #3e4451;
+  --text: #abb2bf; --dim: #828997; --faint: #5c6370;
+  --red: #e06c75; --mauve: #c678dd; --teal: #56b6c2; --border-strong: #5c6370;
+  --blue: #61afef; --green: #98c379; --yellow: #e5c07b; --peach: #d19a66;
+}
+html[data-palette="solarized-dark"] {
+  --bg: #001f27; --deep: #073642; --card: #002b36; --border: #073642;
+  --text: #93a1a1; --dim: #839496; --faint: #657b83;
+  --red: #dc322f; --mauve: #d33682; --teal: #2aa198; --border-strong: #586e75;
+  --blue: #268bd2; --green: #859900; --yellow: #b58900; --peach: #cb4b16;
+}
+html[data-palette="tokyo-night"] {
+  --bg: #12131a; --deep: #16161e; --card: #1a1b26; --border: #292e42;
+  --text: #c0caf5; --dim: #a9b1d6; --faint: #565f89;
+  --red: #f7768e; --mauve: #bb9af7; --teal: #7dcfff; --border-strong: #3b4261;
+  --blue: #7aa2f7; --green: #9ece6a; --yellow: #e0af68; --peach: #ff9e64;
+}
+html[data-palette="catppuccin-latte"] {
+  --bg: #dce0e8; --deep: #e6e9ef; --card: #eff1f5;
+  --border: #ccd0da; --border-strong: #acb0be;
+  --text: #4c4f69; --dim: #6c6f85; --faint: #9ca0b0;
+  --red: #d20f39; --mauve: #ea76cb; --teal: #179299;
+  --blue: #1e66f5; --green: #40a02b; --yellow: #df8e1d; --peach: #fe640b;
+}
+html[data-palette="github-light"] {
+  --bg: #ffffff; --deep: #f6f8fa; --card: #ffffff;
+  --border: #eaeef2; --border-strong: #d1d9e0;
+  --text: #1f2328; --dim: #59636e; --faint: #818b98;
+  --red: #d1242f; --mauve: #8250df; --teal: #0a7ea4;
+  --blue: #0969da; --green: #1a7f37; --yellow: #9a6700; --peach: #bc4c00;
+}
+html[data-palette="one-light"] {
+  --bg: #fafafa; --deep: #f0f0f0; --card: #fafafa;
+  --border: #eaeaeb; --border-strong: #caccd1;
+  --text: #383a42; --dim: #696c77; --faint: #a0a1a7;
+  --red: #e45649; --mauve: #a626a4; --teal: #0184bc;
+  --blue: #4078f2; --green: #50a14f; --yellow: #c18401; --peach: #b76b01;
+}
+html[data-palette="solarized-light"] {
+  --bg: #fdf6e3; --deep: #eee8d5; --card: #fdf6e3;
+  --border: #eee8d5; --border-strong: #93a1a1;
+  --text: #586e75; --dim: #657b83; --faint: #839496;
+  --red: #dc322f; --mauve: #6c71c4; --teal: #2aa198;
+  --blue: #268bd2; --green: #859900; --yellow: #b58900; --peach: #cb4b16;
+}
