@@ -63,9 +63,23 @@ a { color: var(--blue); text-decoration: none; }
 }
 .links a:hover { color: var(--text); border-color: var(--border-strong); text-decoration: none; }
 
-.footer {
-  max-width: 860px; margin-inline: auto; padding: 0 32px 28px;
-  font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+/* family footer — same chrome as rootle.dev / gripsack.dev: border-top,
+   flex row, faint, blinking block caret on the copyright */
+footer {
+  max-width: 860px; margin: 16px auto 0; padding: 24px 32px 44px;
+  border-top: 1px solid var(--border);
+  color: var(--faint); font-size: 14px; display: flex; gap: 18px;
+  flex-wrap: wrap; align-items: baseline;
+}
+footer .right { margin-left: auto; font-family: var(--mono); font-size: 12.5px; }
+@keyframes blink { 50% { opacity: 0; } }
+footer .blink {
+  display: inline-block; width: 8px; height: 14px; background: var(--green);
+  vertical-align: -2px; margin-right: 6px;
+  animation: blink 1.5s steps(2) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  footer .blink { animation: none; }
 }
 
 @media (max-width: 600px) {
