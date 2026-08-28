@@ -1,0 +1,74 @@
+/* personal site — same family as rootle.dev / gripsack.dev: Catppuccin Mocha,
+   mono chrome, single centered column. */
+:root {
+  --bg: #11111b; --card: #1e1e2e; --deep: #181825;
+  --border: #313244; --border-strong: #585b70; --text: #cdd6f4; --dim: #a6adc8; --faint: #6c7086;
+  --blue: #89b4fa; --green: #a6e3a1; --yellow: #f9e2af; --peach: #fab387;
+  --mauve: #cba6f7; --teal: #94e2d5;
+  --mono: ui-monospace, "DejaVu Sans Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--text);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 45%, var(--bg)) 0%, var(--bg) 320px), var(--bg);
+  font-family: var(--sans); line-height: 1.6; font-size: 16px;
+}
+a { color: var(--blue); text-decoration: none; }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 860px; margin-inline: auto; padding: 18px 32px 0;
+  font-family: var(--mono);
+}
+.topbar .brand { display: flex; align-items: center; gap: 10px; }
+.topbar .brand img { width: 26px; height: 26px; }
+.topbar .brand .wordmark { font-weight: 700; font-size: 16px; color: var(--text); }
+.topbar .brand:hover { text-decoration: none; }
+.topbar nav { display: flex; gap: 6px; }
+.topbar nav a { font-size: 13.5px; color: var(--dim); padding: 5px 12px; border-radius: 8px; }
+.topbar nav a:hover { background: var(--card); color: var(--text); text-decoration: none; }
+
+.content { max-width: 860px; margin-inline: auto; padding: 72px 32px 64px; }
+
+.hero h1 {
+  font-family: var(--mono); font-size: 40px; font-weight: 700;
+  margin: 0 0 8px; letter-spacing: -0.5px;
+}
+.hero .tagline { color: var(--dim); font-size: 18px; margin: 0 0 64px; }
+
+.section-label {
+  font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+  text-transform: lowercase; letter-spacing: 1.5px; margin: 0 0 14px;
+}
+
+.projects { display: grid; gap: 16px; margin-bottom: 64px; }
+.project {
+  display: block; background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 26px; color: var(--text);
+  transition: border-color 120ms ease;
+}
+.project:hover { border-color: var(--border-strong); text-decoration: none; }
+.project .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.project .name { font-family: var(--mono); font-weight: 700; font-size: 19px; }
+.project .domain { font-family: var(--mono); font-size: 13px; color: var(--faint); }
+.project p { margin: 8px 0 0; color: var(--dim); font-size: 15px; }
+.project.gripsack .name { color: var(--green); }
+.project.rootle .name { color: var(--blue); }
+
+.links { display: flex; gap: 10px; flex-wrap: wrap; font-family: var(--mono); font-size: 13.5px; }
+.links a {
+  color: var(--dim); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 14px;
+}
+.links a:hover { color: var(--text); border-color: var(--border-strong); text-decoration: none; }
+
+.footer {
+  max-width: 860px; margin-inline: auto; padding: 0 32px 28px;
+  font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 30px; }
+  .content { padding-top: 48px; }
+}
