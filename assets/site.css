@@ -1,4 +1,5 @@
-/* Paper is the default; the original editor palettes remain available below. */
+/* Paper stays the default; Paper Dark is its opt-in forest-and-ivory companion.
+   Both use the existing persistent picker alongside the original editor palettes. */
 :root {
   color-scheme: light;
   --bg: #f8f8f3;
@@ -302,6 +303,15 @@ h2 { margin-top: 12px; font-size: 38px; font-weight: 600; letter-spacing: -.045e
   *, *::before, *::after { transition: none !important; }
   .button:hover, .project-link:hover, .project-link:hover .project-arrow,
   .social-links a:hover .social-arrow { transform: none; }
+}
+
+/* Paper's dark companion shares its ink family, without changing the default. */
+html[data-palette="paper-dark"] {
+  color-scheme: dark;
+  --bg: #151d19; --card: #1c2720;
+  --border: #35473b; --border-strong: #53695b; --text: #e3e9dd;
+  --dim: #9daa9e; --accent: #9bc7ac;
+  --blue: #9bc7ac; --green: #a8bb87; --peach: #cea989; --mauve: #b7a6c9;
 }
 
 /* Original editor palettes, with readable secondary text on the new surfaces. */
