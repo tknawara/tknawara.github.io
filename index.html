@@ -3,75 +3,186 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tarek Nawara</title>
-<meta name="description" content="Tarek Nawara — software engineer building developer tools, mostly in Rust. Gripsack and Rootle.">
-<meta property="og:title" content="Tarek Nawara">
-<meta property="og:description" content="Software engineer building developer tools, mostly in Rust — Gripsack and Rootle.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f8f8f3">
+<title>Tarek Nawara — Software engineer &amp; toolmaker</title>
+<meta name="description" content="I'm Tarek Nawara, a software engineer in London building developer tools, mostly in Rust. Explore strop, rootle, gripsack, and Writfold.">
+<meta property="og:title" content="Tarek Nawara — Good tools. Less friction.">
+<meta property="og:description" content="Software engineer in London. Building developer tools, mostly in Rust: strop, rootle, gripsack, and Writfold.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://tknawara.dev">
-<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./assets/site.css?v=3">
-<script src="./assets/site.js?v=1" defer></script>
+<meta property="og:url" content="https://tknawara.dev/">
+<link rel="canonical" href="https://tknawara.dev/">
+<link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="stylesheet" href="./assets/site.css?v=4">
+<script src="./assets/site.js?v=2"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="topbar">
-  <a class="brand" href="./">
-    <img src="./assets/favicon.svg" alt=""><span class="wordmark">tarek nawara</span>
+<header class="topbar wrap">
+  <a class="brand" href="./" aria-label="Tarek Nawara, home">
+    <span class="monogram" aria-hidden="true">tn<span>.</span></span>
+    <span>Tarek Nawara</span>
   </a>
-  <nav>
-    <a href="https://github.com/tknawara">github ↗</a>
+  <nav aria-label="Main navigation">
+    <a href="#work">Work</a>
+    <a href="#elsewhere">Elsewhere</a>
+    <a href="https://github.com/tknawara">GitHub <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
-<main class="content">
+<main id="main" class="wrap" tabindex="-1">
+  <section class="hero" aria-labelledby="intro-title">
+    <div class="hero-eyebrow">
+      <p class="eyebrow">Software engineer &amp; toolmaker</p>
+      <p class="location"><span aria-hidden="true"></span> London, UK</p>
+    </div>
+    <h1 id="intro-title">Good tools.<br><span>Less friction.</span></h1>
+    <div class="hero-bottom">
+      <p class="intro">I'm <strong>Tarek Nawara.</strong> I build developer tools, mostly in Rust — for editing code, exploring it, and making the environment around it your own.</p>
+      <a class="button" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
 
-<section class="hero">
-  <h1>Tarek Nawara</h1>
-  <p class="tagline">Software engineer building developer tools, mostly in Rust.</p>
-</section>
+  <section id="work" class="work section" aria-labelledby="work-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow"><span class="section-number">01 /</span> Selected work</p>
+        <h2 id="work-title">From my workbench.</h2>
+      </div>
+      <p class="section-note">Different parts of the workflow. <br>The same care for the tools.</p>
+    </div>
 
-<p class="section-label">currently</p>
-<div class="projects">
-  <a class="project gripsack" href="https://gripsack.dev">
-    <div class="head"><span class="name">gripsack</span><span class="domain">gripsack.dev ↗</span></div>
-    <p>Packages from any source plus dotfiles, described once in typed Python or TypeScript, deployed by a single static Rust binary — with generations and rollback.</p>
-  </a>
-  <a class="project rootle" href="https://rootle.dev">
-    <div class="head"><span class="name">rootle</span><span class="domain">rootle.dev ↗</span></div>
-    <p>A modal terminal UI for browsing remote source repositories — Miller-column browser, syntax-highlighted preview, Zed-style search.</p>
-  </a>
-</div>
+    <div class="projects">
+      <article class="project strop">
+        <a class="project-link" href="https://strop.dev" aria-labelledby="strop-name strop-domain" aria-describedby="strop-description">
+          <div class="project-top">
+            <span class="project-kind">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="m6 17 9-12 3 2-9 12-4 1 1-3Z"/>
+                <path d="m13 8 3 2M14 20h6"/>
+              </svg>
+              Modal editor
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 id="strop-name">strop<span class="project-dot" aria-hidden="true">.</span></h3>
+          <p class="project-tagline">See the cut before you make it.</p>
+          <p class="project-description" id="strop-description">A modal text editor in Rust. Familiar motions, a preview of your next edit, and Git context close at hand — in local and remote workspaces.</p>
+          <div class="project-bottom">
+            <span class="project-detail">Rust · Terminal</span>
+            <span class="project-domain" id="strop-domain">strop.dev <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </article>
 
-<p class="section-label">elsewhere</p>
-<div class="links">
-  <a href="https://github.com/tknawara">github</a>
-  <a href="https://www.linkedin.com/in/tarek-nawara-887167b1/">linkedin</a>
-  <a href="https://github.com/gripsack-dev">gripsack-dev</a>
-  <a href="https://github.com/rootledev">rootledev</a>
-</div>
+      <article class="project rootle">
+        <a class="project-link" href="https://rootle.dev" aria-labelledby="rootle-name rootle-domain" aria-describedby="rootle-description">
+          <div class="project-top">
+            <span class="project-kind">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M6 5v14M6 8h10M6 16h10"/>
+                <circle cx="18" cy="8" r="2"/><circle cx="18" cy="16" r="2"/>
+              </svg>
+              Source browser
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 id="rootle-name">rootle<span class="project-dot" aria-hidden="true">.</span></h3>
+          <p class="project-tagline">Explore the source. Skip the clone.</p>
+          <p class="project-description" id="rootle-description">Browse remote repositories from your terminal. Search across forges, preview syntax-highlighted code, and open exactly what you need.</p>
+          <div class="project-bottom">
+            <span class="project-detail">Rust · Terminal</span>
+            <span class="project-domain" id="rootle-domain">rootle.dev <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </article>
 
+      <article class="project gripsack">
+        <a class="project-link" href="https://gripsack.dev" aria-labelledby="gripsack-name gripsack-domain" aria-describedby="gripsack-description">
+          <div class="project-top">
+            <span class="project-kind">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/>
+                <path d="m4 7.5 8 4.5 8-4.5M12 12v9M8 5.25l8 4.5"/>
+              </svg>
+              Developer environments
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 id="gripsack-name">gripsack<span class="project-dot" aria-hidden="true">.</span></h3>
+          <p class="project-tagline">Your environment, made explicit.</p>
+          <p class="project-description" id="gripsack-description">Packages, environments, dotfiles, and tasks, declared in TypeScript. Review managed changes, retain generations, and roll back when you need to.</p>
+          <div class="project-bottom">
+            <span class="project-detail">Rust · TypeScript</span>
+            <span class="project-domain" id="gripsack-domain">gripsack.dev <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </article>
+
+      <article class="project writfold">
+        <a class="project-link" href="https://writfold.dev" aria-labelledby="writfold-name writfold-domain" aria-describedby="writfold-description">
+          <div class="project-top">
+            <span class="project-kind">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M5 3h9l5 5v13H5V3Z"/>
+                <path d="M14 3v5h5M8 12h8M8 16h6"/>
+              </svg>
+              Local knowledge
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 id="writfold-name">writfold<span class="project-dot" aria-hidden="true">.</span></h3>
+          <p class="project-tagline">Keep the context. Keep the evidence.</p>
+          <p class="project-description" id="writfold-description">A local knowledge engine for agents, being built to carry evidence, history, and explicit approval from one session to the next.</p>
+          <div class="project-bottom">
+            <span class="project-detail development"><span aria-hidden="true"></span> In development</span>
+            <span class="project-domain" id="writfold-domain">writfold.dev <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section id="elsewhere" class="elsewhere section" aria-labelledby="elsewhere-title">
+    <div>
+      <p class="eyebrow"><span class="section-number">02 /</span> Elsewhere</p>
+      <h2 id="elsewhere-title">There's a person<br>behind the tools.</h2>
+      <p>Follow the work on GitHub,<br>or say hello on LinkedIn.</p>
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/tknawara">
+        <span><strong>GitHub</strong><span class="social-detail">@tknawara · Code &amp; projects</span></span>
+        <span class="social-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/tarek-nawara-887167b1/">
+        <span><strong>LinkedIn</strong><span class="social-detail">Tarek Nawara · Let's connect</span></span>
+        <span class="social-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <span><span class="blink"></span> © 2026 Tarek Nawara</span>
-  <a href="https://github.com/tknawara">github</a>
-  <a href="https://github.com/tknawara/tknawara.github.io">source</a>
-  <span class="right">london, uk</span>
-  <span class="palettes">
-    <button data-set-palette="catppuccin-mocha" class="active" title="catppuccin-mocha" style="--sw:#89b4fa"></button>
-    <button data-set-palette="dracula" title="dracula" style="--sw:#bd93f9"></button>
-    <button data-set-palette="gruvbox-dark" title="gruvbox-dark" style="--sw:#83a598"></button>
-    <button data-set-palette="nord" title="nord" style="--sw:#88c0d0"></button>
-    <button data-set-palette="one-dark" title="one-dark" style="--sw:#61afef"></button>
-    <button data-set-palette="solarized-dark" title="solarized-dark" style="--sw:#268bd2"></button>
-    <button data-set-palette="tokyo-night" title="tokyo-night" style="--sw:#7aa2f7"></button>
-    <button data-set-palette="catppuccin-latte" title="catppuccin-latte" style="--sw:#1e66f5"></button>
-    <button data-set-palette="github-light" title="github-light" style="--sw:#0969da"></button>
-    <button data-set-palette="one-light" title="one-light" style="--sw:#4078f2"></button>
-    <button data-set-palette="solarized-light" title="solarized-light" style="--sw:#b58900"></button>
-  </span>
+<footer class="footer wrap">
+  <p>© 2026 Tarek Nawara</p>
+  <a class="source-link" href="https://github.com/tknawara/tknawara.github.io">View source <span aria-hidden="true">↗</span></a>
+  <div class="theme-picker" hidden>
+    <label for="palette">Palette</label>
+    <select id="palette" name="palette">
+      <option value="paper">Paper</option>
+      <option value="catppuccin-mocha">Catppuccin Mocha</option>
+      <option value="dracula">Dracula</option>
+      <option value="gruvbox-dark">Gruvbox Dark</option>
+      <option value="nord">Nord</option>
+      <option value="one-dark">One Dark</option>
+      <option value="solarized-dark">Solarized Dark</option>
+      <option value="tokyo-night">Tokyo Night</option>
+      <option value="catppuccin-latte">Catppuccin Latte</option>
+      <option value="github-light">GitHub Light</option>
+      <option value="one-light">One Light</option>
+      <option value="solarized-light">Solarized Light</option>
+    </select>
+  </div>
 </footer>
-
 </body>
 </html>

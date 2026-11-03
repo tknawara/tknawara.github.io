@@ -1,35 +1,42 @@
-/* tknawara.dev palette picker — same mechanism as rootle.dev/gripsack.dev:
-   palettes are pure CSS (html[data-palette] blocks in site.css); this sets
-   the attribute and persists the choice. No dependencies. */
+/* Keep this script in <head> without defer so saved palettes apply before paint.
+   Palette IDs live in index.html's select and site.css's data-palette rules.
+   Paper is the default and clears the existing tknawara-palette storage key.
+   All content and navigation work without JavaScript; only the picker needs it. */
 (function () {
   var KEY = "tknawara-palette";
-  var DEFAULT = "catppuccin-mocha";
-
-  function apply(name) {
-    if (name && name !== DEFAULT) {
-      document.documentElement.setAttribute("data-palette", name);
-    } else {
-      document.documentElement.removeAttribute("data-palette");
-    }
-    var buttons = document.querySelectorAll("[data-set-palette]");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.toggle(
-        "active",
-        buttons[i].getAttribute("data-set-palette") === (name || DEFAULT)
-      );
-    }
-  }
-
+  var DEFAULT = "paper";
+  var root = document.documentElement;
   var stored = null;
-  try { stored = localStorage.getItem(KEY); } catch (e) { /* private mode */ }
-  apply(stored);
 
-  document.addEventListener("click", function (ev) {
-    var target = ev.target;
-    var pal = target.closest ? target.closest("[data-set-palette]") : null;
-    if (!pal) return;
-    var name = pal.getAttribute("data-set-palette");
-    apply(name);
-    try { localStorage.setItem(KEY, name === DEFAULT ? "" : name); } catch (e) {}
+  try { stored = localStorage.getItem(KEY); } catch (e) { /* Storage is optional. */ }
+  if (stored) root.setAttribute("data-palette", stored);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var picker = document.getElementById("palette");
+    var themeColor = document.querySelector('meta[name="theme-color"]');
+    picker.value = stored || DEFAULT;
+    if (!picker.value) picker.value = DEFAULT;
+
+    function apply() {
+      if (picker.value === DEFAULT) {
+        root.removeAttribute("data-palette");
+      } else {
+        root.setAttribute("data-palette", picker.value);
+      }
+      themeColor.setAttribute("content", getComputedStyle(root).getPropertyValue("--bg").trim());
+    }
+
+    apply();
+    picker.parentElement.hidden = false;
+    picker.addEventListener("change", function () {
+      apply();
+      try {
+        if (picker.value === DEFAULT) {
+          localStorage.removeItem(KEY);
+        } else {
+          localStorage.setItem(KEY, picker.value);
+        }
+      } catch (e) { /* The picker still works when storage is unavailable. */ }
+    });
   });
 })();
